@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Netflix Clone</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+<style>
+  /* Reset Styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #141414;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  h1, h2 {
+    margin-bottom: 10px;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 20px;
+    background-image: url('https://cdn.pixabay.com/photo/2015/03/26/09/47/skyline-690904_960_720.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 30px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav li {
+    margin-right: 30px;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+  }
+  
+  .search input[type="text"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .search button[type="submit"] {
+    background-color: #e50914;
+    border: none;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .account a {
+    background-color: #e50914;
+    border-radius: 3px;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .hero {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 200px;
+    padding-bottom: 100px;
+  }
+  
+  .hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hero h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .hero form {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .hero input[type="email"] {
+    background-color: #fff;
+    border: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    color: #000;
+    font-size: 16px;
+    padding: 5px;
+    width: 300px;
+  }
+  
+  .hero button[type="submit"] {
+    background-color: #e50914;
+    border: none;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 16px;
+  }
+    .genres {
+  padding: 50px;
+  background-color: #fff;
+}
+
+.container img:hover{
+  scale: 1.2;
+  transition: 1s ease-in-out;
+  border-radius: 10px;
+}
+
+.genres h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.genre-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.genre-card {
+  width: calc(20% - 20px);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.genre-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.genre-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.suggested-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.suggested-video {
+  width: 30%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.suggested-video-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.suggested-video-title {
+  font-size: 1.2rem;
+  margin: 10px;
+}
+.container{
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 15px;
+}
+
+.container img{
+  padding: 15px;
+  border-radius: 8px;
+}
+.container::-webkit-scrollbar{
+  display: none;
+}
+
+footer{
+
+  text-align: center;
+
+}
+
+
+    </style>
+
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <img src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix Logo">
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">New &amp; Popular</a></li>
+            <li><a href="#">My List</a></li>
+          </ul>
+        </nav>
+        <div class="search">
+          <input type="text" placeholder="Search">
+          <button type="submit">Search</button>
+        </div>
+        <div class="account">
+          <a href="#">Sign In</a>
+        </div>
+      </div>
+      <div class="hero">
+        <h1>Unlimited movies, TV shows, and more.</h1>
+        <h2>Watch anywhere. Cancel anytime.</h2>
+        <form>
+          <input type="email" placeholder="Email address">
+          <button type="submit">Try 30 Days Free</button>
+        </form>
+        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+      </div>
+    </header>
+    <h2>Featured</h2>
+   <section class="container">
+    <img src="./img/m1.PNG" style="height: 160px;" alt="img" title=""></img>
+    <img src="./img/m2.PNG" style="height: 160px;" alt="img" title=""></img>
+    <img src="./img/m3.PNG" style="height: 160px;" alt="img" title=""></img>
+    <img src="./img/o1.PNG" style="height: 160px;" alt="img" title=""></img>
+    <img src="./img/p1.PNG" style="height: 160px;" alt="img" title=""></img>
+    <img src="./img/r1.PNG" style="height: 160px;" alt="img" title=""></img>
+    <img src="./img/t1.PNG" style="height: 160px;" alt="img" title=""></img>
+    <img src="./img/tv1.PNG" style="height: 160px;" alt="img" title=""></img>
+   
+  </section>
+  <h2>Movies</h2>
+  <section class="container">
+   <img src="./img/m1.PNG" style="height: 160px;" alt="img" title=""></img>
+   <img src="./img/m2.PNG" style="height: 160px;" alt="img" title=""></img>
+   <img src="./img/m3.PNG" style="height: 160px;" alt="img" title=""></img>
+   <img src="./img/m4.PNG" style="height: 160px;" alt="img" title=""></img>
+   <img src="./img/m5.PNG" style="height: 160px;" alt="img" title=""></img>
+   <img src="./img/m6.PNG" style="height: 160px;" alt="img" title=""></img>
+   <img src="./img/r2.PNG" style="height: 160px;" alt="img" title=""></img>
+   <img src="./img/r3.PNG" style="height: 160px;" alt="img" title=""></img>
+  
+ </section>
+ <h2>Originals</h2>
+ <section class="container">
+  <img src="./img/o1.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/o2.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/o3.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/o4.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/o5.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/o6.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/t2.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/t3.PNG" style="height: 160px;" alt="img" title=""></img>
+ 
+</section>
+<h2>TV</h2>
+ <section class="container">
+  <img src="./img/tv1.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/tv2.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/tv3.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/tv4.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/tv5.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/tv6.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/tv7.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/tv8.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/tv9.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/tv10.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/tv11.PNG" style="height: 160px;" alt="img" title=""></img>
+  <img src="./img/tv12.PNG" style="height: 160px;" alt="img" title=""></img>
+ 
+</section>
+<h2>Anime</h2>
+ <section class="container">
+  <img src="https://occ-0-2701-3663.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABY4oFiGoSQ7K68P_yJEkKYTY3zM7p9xiaZA5n7KQp2zELcnt06Ab-5IHs2YB5oZIKu2AZgAW1834GY1woVv5BRsKT8khXaNztUPEo13K3g3Pq-2Adl_sU-Xk5D1mF5aE6DFIM7TckuOAzxTkXTr9EXp8Ua2hsUIVXvEK4cCUbAvuIv0mzLQIuRs1kPhge-q2Pb-UYPLEU6Dhelj5fnbPKy76pLOUnfNLQtKO2deZw5hE0IWGrziUY55PGlBNW5lubTt2ZvHphbZTY3UyDKDGjTI.jpg?r=daa" style="height: 160px;" alt="img" title=""></img>
+  <img src="https://occ-0-2701-3663.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABanbbVuRJ2vO6qXLUgeMsoXKj001cJrMmPMJa98WRWOYHULloKi6XcY_DvcnyEQtxbL7Dyo3WMOK2maWe3-gvY0pGA_IMo9cyxE.jpg?r=777" style="height: 160px;" alt="img" title=""></img>
+  <img src="https://occ-0-2701-3663.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABYPY6-i7ctvkCNby6oFZ55gXPQf9fRBVprcuUFZ2tKAO6YEOOTlksJH6LFAxAQem2-4THdoo-9h2WmS9CpAQqdb8lM1l44HNjJk.jpg?r=21e" style="height: 160px;" alt="img" title=""></img>
+  <img src="https://occ-0-2701-3663.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABQCY-14xr-BsiTKAhQlFilw4neH3Dgw_hIW9_msPTz3rFDekLNiQjz5g82_SPn3kD1YI6bADQsYAd3oSOFg83pAgtk-ypn272fc.jpg?r=739" style="height: 160px;" alt="img" title=""></img>
+  <img src="https://occ-0-2701-3663.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABWFCAyxP6-WzNff2wsha8BxubCUKU1WY4flVycvoomJbMtT6tmuwYp1yR9_bR2Z7HBBp4V6-IabkBeqo4MNQ8kxXfPO1h9hd-88.jpg?r=eb2" style="height: 160px;" alt="img" title=""></img>
+  <img src="https://occ-0-2701-3663.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABTorjWnhFwe1OwTfNx60S66cRbhfsd9VsOZvRY7FbhjigiP-ExHUZ4tIwpvjmhaI-GbQ3oLJmVCTY3viGLXO2knoJN5zUFK2cRlrpSH8Z6G9-47lXXmudNXc6tcMkidwWqIaDhff7AOs3E-WNy2wW51avvxhhRA45sfa31YQmfrNRVSwSkTryYtfkOJRbHPkjkWhMRrdgZnsKpi2C1t00FcQMQqieACDsfmqAmX12P0ppYaM_8kmp-KW1phNqBgVfKIboGMT0DAbbm7lEpTPVJ8.jpg?r=1c3" style="height: 160px;" alt="img" title=""></img>
+  <img src="https://occ-0-2701-3663.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABWDlpi45OTxbAN_DszbSQFd0-KdxibAXDxVxZKC7HH6dI3-_RAfhLDS7eR5uUxoOYZADLh4lmImpbHox4Wba2-w491UJokFr798FBTuklouL9-hD4n0zM8j7zEnNsdqyzVty.jpg?r=978" style="height: 160px;" alt="img" title=""></img>
+  <img src="https://occ-0-2701-3663.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABebn9iySs7VhsZa3kHjcj1LViEpo-SoDzIH34WEV5qRJN2McrwcUbgBQo5Bh-7qo4JraYtOiTaGOISmcCfHgcI0oOdRUpsQxFbM.jpg?r=d2c" style="height: 160px;" alt="img" title=""></img>
+ 
+</section>
+    <footer>
+      <p>&copy; 2023 Netflix Clone</p>
+    </footer>
+  </body>
+</html>
+
